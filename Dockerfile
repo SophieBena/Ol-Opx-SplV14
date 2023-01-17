@@ -9,6 +9,6 @@ USER ${NB_USER}
 
 # Launch Notebook server
 EXPOSE 8888
-CMD ["Ol-Opx-SplV14", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.token=''"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.token=''", "--NotebookApp.notebook_dir=${HOME}", "--NotebookApp.default_url=/appmode/Ol-Opx-SplV14.ipynb"]
 
 #EOF
