@@ -7,17 +7,6 @@ RUN jupyter nbextension enable --py --sys-prefix appmode
 RUN jupyter serverextension enable --py --sys-prefix appmode
 USER ${NB_USER}
 
-# install Jupyter via pip
-RUN pip install notebook
-
-# install ipywidgets
-RUN pip install ipywidgets  && \
-    jupyter nbextension enable --sys-prefix --py widgetsnbextension
-
-# install Appmode
-COPY . /opt/appmode
-WORKDIR /opt/appmode/
-
 # Launch Notebook server
 EXPOSE 8888
 CMD ["Ol-Opx-SplV14", "--ip=0.0.0.0", "--allow-root", "--no-browser", "--NotebookApp.token=''"]
