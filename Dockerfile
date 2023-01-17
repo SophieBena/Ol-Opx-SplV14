@@ -17,9 +17,6 @@ RUN pip install ipywidgets  && \
 # install Appmode
 COPY . /opt/appmode
 WORKDIR /opt/appmode/
-RUN pip install .                                           && \
-    jupyter nbextension     enable --py --sys-prefix appmode && \
-    jupyter serverextension enable --py --sys-prefix appmode
 
 # Launch Notebook server
 EXPOSE 8888
