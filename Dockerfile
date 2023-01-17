@@ -1,4 +1,4 @@
-FROM registry.gitlab.com/enki-portal/thermoengine:master
+FROM registry.gitlab.com/ENKI-portal/ThermoEngine:master
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
