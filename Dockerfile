@@ -7,7 +7,7 @@ RUN jupyter nbextension enable --py --sys-prefix appmode
 RUN jupyter serverextension enable --py --sys-prefix appmode
 USER ${NB_USER}
 
-RUN jupyter-notebook-appmode --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' --NotebookApp.base_url=${NB_PREFIX} --notebook-dir=${HOME} --no-browser --allow-root ${HOME}/Ol-Opx-SplV14.ipynb
+RUN jupyter lab --no-browser --notebook-dir=${HOME} --ip=0.0.0.0 --port=8888 --allow-root ${HOME}/Ol-Opx-SplV14.ipynb
 
 
 #EOF
